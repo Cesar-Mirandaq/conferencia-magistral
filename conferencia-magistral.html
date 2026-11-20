@@ -1,0 +1,202 @@
+<!doctype html>
+<html lang="es"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Conferencia Magistral</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@600;800&family=Public+Sans:wght@400;600&display=swap">
+<style>
+:root{--bg:#EDF1F5;--sf:#fff;--ink:#0F1B2D;--mut:#52607a;--ac:#F2A900;--on:#1a1200;--tl:#0E7C7B;--bd:#cdd6e2;--tk:#c3ccda;--er:#b3261e;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0c1524;--sf:#14233a;--ink:#eaf0f8;--mut:#9fb0c9;--bd:#27395a;--tk:#2b3d5c;--tl:#3cc4c2;--er:#ff8a80}}
+:root[data-theme="dark"]{--bg:#0c1524;--sf:#14233a;--ink:#eaf0f8;--mut:#9fb0c9;--bd:#27395a;--tk:#2b3d5c;--tl:#3cc4c2;--er:#ff8a80}
+*,*::before,*::after{box-sizing:inherit}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.55 "Public Sans",system-ui,sans-serif}
+h1,h2,h3{font-family:"Bricolage Grotesque","Public Sans",system-ui,sans-serif;line-height:1.08;margin:0 0 .5em}
+h1{font-size:clamp(2.2rem,9vw,4rem);font-weight:800}h2{font-size:1.6rem}h3{font-size:1.1rem}
+.w{max-width:960px;margin:0 auto;padding:0 16px}
+header{border-bottom:1px solid var(--bd)}
+header .w{display:flex;flex-wrap:wrap;gap:8px;align-items:center;justify-content:space-between;padding:12px 16px}
+.brand{font:800 1.1rem "Bricolage Grotesque",system-ui,sans-serif}
+nav{display:flex;gap:4px;flex-wrap:wrap}
+nav a{padding:8px 12px;border-radius:8px;color:var(--ink);text-decoration:none;font-weight:600}
+nav a[aria-current="page"]{background:var(--ink);color:var(--bg)}
+a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible{outline:3px solid var(--tl);outline-offset:2px}
+.v{display:none;padding:24px 0 40px}.v.on{display:block}
+.card{background:var(--sf);border:1px solid var(--bd);border-radius:12px;padding:16px;margin-bottom:16px}
+.grid{display:grid;gap:16px}@media(min-width:760px){.g2{grid-template-columns:1fr 1fr}}
+.mut{color:var(--mut)}
+.btn{display:inline-block;border:0;border-radius:10px;padding:12px 18px;font:600 1rem "Public Sans",system-ui,sans-serif;background:var(--ac);color:var(--on);cursor:pointer;text-decoration:none}
+.btn.alt{background:transparent;color:var(--ink);border:1px solid var(--bd)}
+.btn.wa{background:#1fa855;color:#fff}.btn.sm{padding:6px 10px;font-size:.9rem}
+label{display:block;font-weight:600;margin:12px 0 4px}
+input,select{width:100%;padding:11px;border-radius:8px;border:1px solid var(--bd);background:var(--bg);color:var(--ink);font:inherit}
+.err{color:var(--er);font-weight:600;min-height:1.4em;margin:8px 0}
+.ok{color:var(--tl);font-weight:600}
+.stage{background:var(--ink);color:var(--bg);text-align:center;border-radius:8px 8px 40px 40px;padding:8px;font-weight:600;margin-bottom:14px}
+.map{overflow-x:auto;padding-bottom:6px}
+.row{display:flex;gap:4px;align-items:center;margin-bottom:4px;width:max-content;margin-inline:auto}
+.row b{width:18px;text-align:center;color:var(--mut)}
+.s{width:30px;height:30px;border-radius:6px 6px 10px 10px;border:1px solid var(--tl);background:transparent;color:var(--ink);font-size:.7rem;cursor:pointer;padding:0}
+.s.gap{margin-right:16px}
+.s:disabled{background:var(--tk);border-color:var(--tk);cursor:not-allowed;color:var(--mut)}
+.s.on{background:var(--ac);border-color:var(--ac);color:var(--on);font-weight:800}
+.leg{display:flex;gap:14px;font-size:.85rem;color:var(--mut);margin-top:8px;flex-wrap:wrap}
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+.stats div{background:var(--sf);border:1px solid var(--bd);border-radius:10px;padding:10px;text-align:center}
+.stats strong{display:block;font:800 1.8rem "Bricolage Grotesque",system-ui,sans-serif}
+.tw{overflow-x:auto}table{border-collapse:collapse;width:100%;min-width:640px}
+th,td{padding:8px;border-bottom:1px solid var(--bd);text-align:left;font-size:.92rem}
+#qr{display:inline-block;padding:12px;background:#fff;border-radius:10px}
+video{width:100%;max-width:320px;border-radius:10px}
+dl{display:grid;grid-template-columns:auto 1fr;gap:4px 14px;margin:0}dt{color:var(--mut)}dd{margin:0;font-weight:600}
+@media(prefers-reduced-motion:no-preference){.v.on{animation:in .25s ease}@keyframes in{from{opacity:.4}to{opacity:1}}}
+</style></head><body>
+<header><div class="w"><span class="brand">Conferencia Magistral</span>
+<nav id="nav"><a href="#evento">Evento</a><a href="#registro">Registro</a><a href="#boleto">Mi boleto</a><a href="#admin">Administración</a></nav></div></header>
+<main class="w">
+
+<section class="v" id="evento">
+<h1 id="evTitle"></h1>
+<p class="mut" id="evSub" style="font-size:1.15rem;max-width:36em"></p>
+<div class="grid g2">
+<div class="card"><h3>Datos del evento</h3><dl id="evDl"></dl>
+<p><a class="btn" href="#registro">Reservar mi lugar</a></p></div>
+<div class="card"><h3>Programa</h3><dl id="evAg"></dl></div></div>
+<div class="card"><h3>Disponibilidad en el auditorio</h3><div class="stage">Escenario</div><div class="map" id="heroMap"></div>
+<div class="leg"><span>Libre</span><span id="heroCnt"></span></div></div>
+</section>
+
+<section class="v" id="registro">
+<h2>Registro de asistentes</h2>
+<div class="grid g2">
+<form class="card" id="f" novalidate>
+<label for="n">Nombre completo</label><input id="n" autocomplete="name" required>
+<label for="e">Correo electrónico</label><input id="e" type="email" autocomplete="email" required>
+<label for="p">WhatsApp (10 dígitos)</label><input id="p" inputmode="numeric" maxlength="10" autocomplete="tel-national" required>
+<label for="o">Institución u organización</label><input id="o" autocomplete="organization">
+<p class="mut" id="selTxt">Elige tu asiento en el mapa.</p>
+<div class="err" id="fe" role="alert"></div>
+<button class="btn" type="submit">Confirmar registro</button></form>
+<div class="card"><h3>Selecciona tu asiento</h3><div class="stage">Escenario</div><div class="map" id="regMap"></div>
+<div class="leg"><span>Libre</span><span>Seleccionado en amarillo</span><span>Ocupado en gris</span></div></div></div>
+</section>
+
+<section class="v" id="boleto">
+<h2>Mi boleto</h2>
+<div class="card" id="tkt"></div>
+<form class="card" id="lk"><label for="lc">Consultar con mi código</label>
+<input id="lc" placeholder="CM-XXXXXX" autocapitalize="characters"><p class="err" id="le" role="alert"></p>
+<button class="btn alt" type="submit">Buscar boleto</button></form>
+</section>
+
+<section class="v" id="admin"><h2>Panel administrativo</h2><div id="adm"></div></section>
+</main>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+<script>
+const EV={name:"Tecnología con propósito",sub:"Una conferencia magistral sobre cómo construir software que mejora la vida de las personas.",
+speaker:"Dra. Ana Lucía Herrera (ejemplo)",date:"Jueves 3 de diciembre de 2026",time:"10:00 h",place:"Auditorio principal",
+agenda:[["09:30","Registro y acceso con QR"],["10:00","Conferencia magistral"],["11:15","Preguntas y respuestas"],["11:45","Cierre y constancias"]]};
+const PIN="1234",ROWS="ABCDEFGH",COLS=10,KEY="cm_regs_v1",LAST="cm_last";
+const $=s=>document.querySelector(s);
+const esc=s=>String(s).replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+let mem=[],memLast="",sel="",authed=false;
+function load(){try{return JSON.parse(localStorage.getItem(KEY)||"[]")}catch(e){return mem}}
+function save(a){mem=a;try{localStorage.setItem(KEY,JSON.stringify(a))}catch(e){}}
+function getLast(){try{return localStorage.getItem(LAST)||memLast}catch(e){return memLast}}
+function setLast(c){memLast=c;try{localStorage.setItem(LAST,c)}catch(e){}}
+const allSeats=[...ROWS].flatMap(r=>Array.from({length:COLS},(_,i)=>r+(i+1)));
+
+function seatMap(el,taken,pick){
+  el.innerHTML=[...ROWS].map(r=>`<div class="row"><b>${r}</b>`+Array.from({length:COLS},(_,i)=>{
+    const id=r+(i+1),t=taken.has(id);
+    return `<button type="button" class="s${i==4?" gap":""}${id===sel&&pick?" on":""}" data-id="${id}" ${t||!pick?"disabled":""} aria-label="Asiento ${id}${t?", ocupado":""}">${i+1}</button>`}).join("")+`</div>`).join("");
+  if(pick)el.onclick=e=>{const b=e.target.closest(".s");if(b&&!b.disabled){sel=b.dataset.id;pick(sel)}};
+}
+function route(){
+  let h=(location.hash||"#evento").slice(1);
+  if(!["evento","registro","boleto","admin"].includes(h))h="evento";
+  document.querySelectorAll(".v").forEach(s=>s.classList.toggle("on",s.id===h));
+  document.querySelectorAll("#nav a").forEach(a=>{if(a.hash==="#"+h)a.setAttribute("aria-current","page");else a.removeAttribute("aria-current")});
+  ({evento:drawEv,registro:drawReg,boleto:()=>showTicket(getLast()),admin:drawAdm})[h]();
+}
+function drawEv(){
+  $("#evTitle").textContent=EV.name;$("#evSub").textContent=EV.sub;
+  $("#evDl").innerHTML=[["Ponente",EV.speaker],["Fecha",EV.date],["Hora",EV.time],["Lugar",EV.place],["Cupo",allSeats.length+" asientos"]].map(x=>`<dt>${x[0]}</dt><dd>${esc(x[1])}</dd>`).join("");
+  $("#evAg").innerHTML=EV.agenda.map(x=>`<dt>${x[0]}</dt><dd>${x[1]}</dd>`).join("");
+  const t=new Set(load().map(r=>r.seat));seatMap($("#heroMap"),t,null);
+  $("#heroCnt").textContent=(allSeats.length-t.size)+" lugares libres de "+allSeats.length;
+}
+function drawReg(){
+  const t=new Set(load().map(r=>r.seat));
+  if(t.has(sel))sel="";
+  const pick=s=>{$("#selTxt").innerHTML="Asiento elegido: <strong>"+s+"</strong>";seatMap($("#regMap"),t,pick)};
+  seatMap($("#regMap"),t,pick);
+  $("#selTxt").innerHTML=sel?"Asiento elegido: <strong>"+sel+"</strong>":"Elige tu asiento en el mapa.";
+}
+$("#f").addEventListener("submit",ev=>{
+  ev.preventDefault();
+  const n=$("#n").value.trim(),e=$("#e").value.trim().toLowerCase(),p=$("#p").value.trim(),o=$("#o").value.trim(),fe=$("#fe"),a=load();
+  if(n.length<3)return fe.textContent="Escribe tu nombre completo.";
+  if(!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(e))return fe.textContent="Escribe un correo válido, por ejemplo nombre@correo.com.";
+  if(!/^\d{10}$/.test(p))return fe.textContent="El número de WhatsApp debe tener 10 dígitos, sin espacios.";
+  if(!sel)return fe.textContent="Elige un asiento en el mapa.";
+  if(a.some(r=>r.email===e))return fe.textContent="Este correo ya está registrado. Consulta tu boleto en “Mi boleto”.";
+  if(a.some(r=>r.phone===p))return fe.textContent="Este número de WhatsApp ya está registrado.";
+  if(a.some(r=>r.seat===sel)){sel="";drawReg();return fe.textContent="Ese asiento ya fue ocupado. Elige otro."}
+  let code;do{code="CM-"+Math.random().toString(36).slice(2,8).toUpperCase()}while(a.some(r=>r.code===code));
+  a.push({code,name:n,email:e,phone:p,org:o,seat:sel,at:Date.now(),checked:null});save(a);setLast(code);
+  fe.textContent="";sel="";ev.target.reset();location.hash="#boleto";
+});
+function showTicket(code){
+  const r=load().find(x=>x.code===code),b=$("#tkt");
+  if(!r){b.innerHTML='<p class="mut">Aún no hay boleto. <a href="#registro">Regístrate</a> o busca con tu código.</p>';return}
+  const msg=`Hola ${r.name}, tu registro a la ${EV.name} está confirmado. Código: ${r.code}. Asiento: ${r.seat}. ${EV.date}, ${EV.time}, ${EV.place}. Presenta tu código QR en la entrada.`;
+  b.innerHTML=`<p class="ok">Registro confirmado</p><div id="qr"></div><dl style="margin-top:12px"><dt>Nombre</dt><dd>${esc(r.name)}</dd><dt>Código</dt><dd>${r.code}</dd><dt>Asiento</dt><dd>${r.seat}</dd><dt>Fecha</dt><dd>${EV.date}, ${EV.time}</dd></dl>
+  <p><a class="btn wa" target="_blank" rel="noopener" href="https://wa.me/52${r.phone}?text=${encodeURIComponent(msg)}">Enviar confirmación por WhatsApp</a></p>`;
+  try{new QRCode($("#qr"),{text:r.code,width:200,height:200,correctLevel:QRCode.CorrectLevel.M})}catch(e){$("#qr").textContent=r.code}
+}
+$("#lk").addEventListener("submit",e=>{e.preventDefault();const c=$("#lc").value.trim().toUpperCase();
+  if(!load().some(r=>r.code===c))return $("#le").textContent="No encontramos ese código. Revisa que empiece con CM-.";
+  $("#le").textContent="";setLast(c);showTicket(c)});
+
+function drawAdm(){
+  const box=$("#adm");
+  if(!authed){box.innerHTML=`<form class="card" id="pf"><label for="pin">PIN de administrador</label><input id="pin" type="password" inputmode="numeric"><p class="err" id="pe" role="alert"></p><button class="btn">Entrar</button></form>`;
+    $("#pf").onsubmit=e=>{e.preventDefault();if($("#pin").value===PIN){authed=true;drawAdm()}else $("#pe").textContent="PIN incorrecto."};return}
+  const a=load(),taken=new Set(a.map(r=>r.seat)),q=(box.dataset.q||"").toLowerCase();
+  const list=a.filter(r=>(r.name+r.email+r.code+r.seat).toLowerCase().includes(q));
+  box.innerHTML=`<div class="stats"><div><strong>${a.length}</strong>Registrados</div><div><strong>${a.filter(r=>r.checked).length}</strong>Ingresaron</div><div><strong>${allSeats.length-a.length}</strong>Libres</div></div>
+  <div class="card" style="margin-top:16px"><h3>Validar código QR</h3><form id="vf" style="display:flex;gap:8px"><input id="vc" placeholder="CM-XXXXXX" autocapitalize="characters"><button class="btn">Validar</button></form>
+  <p><button class="btn alt sm" id="cam" type="button">Escanear con cámara</button></p><video id="vid" hidden playsinline muted></video><p id="vr" role="status" style="font-weight:600"></p></div>
+  <div class="card"><h3>Asistentes</h3><input id="sq" placeholder="Buscar por nombre, correo, código o asiento" value="${esc(box.dataset.q||"")}">
+  <div class="tw"><table><thead><tr><th>Nombre</th><th>Correo / WhatsApp</th><th>Código</th><th>Asiento</th><th>Acceso</th><th></th></tr></thead><tbody>
+  ${list.map(r=>`<tr><td>${esc(r.name)}</td><td>${esc(r.email)}<br><span class="mut">${r.phone}</span></td><td>${r.code}</td>
+  <td><select data-seat="${r.code}" aria-label="Asiento de ${esc(r.name)}">${allSeats.filter(s=>s===r.seat||!taken.has(s)).map(s=>`<option${s===r.seat?" selected":""}>${s}</option>`).join("")}</select></td>
+  <td>${r.checked?new Date(r.checked).toLocaleTimeString("es-MX",{hour:"2-digit",minute:"2-digit"}):"Pendiente"}</td>
+  <td><button class="btn alt sm" data-del="${r.code}">Eliminar</button></td></tr>`).join("")||'<tr><td colspan="6" class="mut">Sin registros todavía.</td></tr>'}</tbody></table></div></div>`;
+  $("#sq").oninput=e=>{box.dataset.q=e.target.value;const p=e.target.selectionStart;drawAdm();const s=$("#sq");s.focus();s.setSelectionRange(p,p)};
+  $("#vf").onsubmit=e=>{e.preventDefault();validate($("#vc").value)};
+  $("#cam").onclick=scan;
+  box.querySelectorAll("[data-seat]").forEach(s=>s.onchange=()=>{const b=load(),r=b.find(x=>x.code===s.dataset.seat);
+    if(b.some(x=>x.seat===s.value&&x.code!==r.code))return;r.seat=s.value;save(b);drawAdm()});
+  box.querySelectorAll("[data-del]").forEach(d=>d.onclick=()=>{
+    if(d.dataset.sure){save(load().filter(r=>r.code!==d.dataset.del));drawAdm()}else{d.dataset.sure=1;d.textContent="Toca otra vez para eliminar"}});
+}
+function validate(raw){
+  const c=String(raw).trim().toUpperCase(),b=load(),r=b.find(x=>x.code===c);let m;
+  if(!r)m='<span style="color:var(--er)">Código no válido: no existe en la base de datos.</span>';
+  else if(r.checked)m=`<span style="color:var(--er)">Este código ya se usó a las ${new Date(r.checked).toLocaleTimeString("es-MX",{hour:"2-digit",minute:"2-digit"})}.</span>`;
+  else{r.checked=Date.now();save(b);m=`<span class="ok">Acceso permitido: ${esc(r.name)}, asiento ${r.seat}.</span>`}
+  drawAdm();$("#vr").innerHTML=m;
+}
+async function scan(){
+  const vr=$("#vr");
+  if(!("BarcodeDetector" in window))return vr.textContent="Este navegador no lee QR con la cámara. Escribe el código.";
+  try{const s=await navigator.mediaDevices.getUserMedia({video:{facingMode:"environment"}}),v=$("#vid");
+    v.srcObject=s;v.hidden=false;await v.play();const d=new BarcodeDetector({formats:["qr_code"]});
+    const t=setInterval(async()=>{try{const r=await d.detect(v);if(r[0]){clearInterval(t);s.getTracks().forEach(x=>x.stop());validate(r[0].rawValue)}}catch(e){}},400);
+  }catch(e){vr.textContent="No se pudo abrir la cámara. Escribe el código manualmente."}
+}
+addEventListener("hashchange",route);route();
+</script></body></html>
